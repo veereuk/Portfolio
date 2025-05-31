@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language Translator Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <i id="theme-icon" class="fas fa-moon"></i>
+  </button>
+
+  <section class="section">
+    <h1 class="highlight">🌐 Language Translator</h1>
+    <p style="text-align:center;">
+      This project allows users to translate text between multiple languages using the Google Translate API.
+      Built with Flask, HTML, CSS, and JavaScript.
+    </p>
+  </section>
+
+  <hr style="width: 80%; margin: 20px auto; border: 1px solid var(--accent);" />
+
+  <!-- Screenshots -->
+  <section class="screenshots section">
+    <img src="pic1.png" alt="Screenshot 1" />
+    <img src="pic2.png" alt="Screenshot 2" />
+    <img src="pic3.png" alt="Screenshot 3" />
+  </section>
+
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <a href="./index.html">
+      <button class="btn">← Back to Portfolio</button>
+    </a>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById("theme-icon");
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+      icon.classList.toggle("fa-sun");
+      icon.classList.toggle("fa-moon");
+    }
+  </script>
+</body>
+</html>

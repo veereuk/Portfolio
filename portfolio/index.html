@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veeresh | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+  <!-- 🌗 Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Light/Dark">
+    <i id="theme-icon" class="fas fa-moon"></i>
+  </button>
+
+  <!-- 👋 Hero Section -->
+  <section class="hero">
+    <img src="pic-removebg-preview.png" alt="Veeresh Pic" class="profile-pic"/>
+    <h1>Hi, I'm <span class="highlight">Veeresh M Kakamari</span></h1>
+    <h2><span class="typewriter" id="typewriter"></span></h2>
+    <p>Full Stack Developer | UI Lover</p>
+    <a href="My Final Resume.pdf" download class="btn">📄 Download Resume</a>
+  </section>
+
+  <!-- 💡 Skills Section -->
+  <section class="section skills" data-aos="fade-up">
+    <h2>Skills</h2><br><br>
+    <div class="skill-grid">
+      <div><h3>Frontend</h3><p>HTML, CSS, JavaScript</p></div>
+      <div><h3>Backend</h3><p>Django</p></div>
+      <div><h3>Database</h3><p>MySQL</p></div>
+      <div><h3>Tools</h3><p>Git, GitHub</p></div>
+    </div>
+  </section>
+
+  <!-- 🚀 Projects -->
+  <section class="section projects" data-aos="zoom-in">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3>Netflix Clone</h3>
+      <p>Built a Netflix landing page replica with responsive design.</p>
+      <p><strong>Tech:</strong> HTML, CSS</p>
+      <a href="../portfolio/Netflix_Clone/home.html"><button>View Project</button></a>
+    </div>
+
+    <div class="project-card">
+      <h3>Language Translator</h3>
+      <p>Web app that translates text between 100+ languages using Google Translate API.</p>
+      <p><strong>Tech:</strong> Flask, JS, API</p>
+      <a href="language-pics.html"><button>View Project</button></a>
+    </div>
+
+    <div class="project-card">
+      <h3>Drum Kit Game</h3>
+      <p>A musical web game that plays drums on button press or keystroke.</p>
+      <p><strong>Tech:</strong> HTML, CSS, JS</p>
+      <a href="drum/javascript/drum.html"><button>View Project</button></a>
+    </div>
+  </section>
+  <!---Certificate-->
+  <section class="section certifications">
+    <h2>📜 Certifications</h2>
+    <div class="certificate-card">
+    <ul>
+      <li> Full-Stack Development Internship – Varcons Technologies Pvt. Ltd. (2025)</li>
+      <li> Software Engineering Job Simulation – Goldman Sachs via Forage (2025)</li>
+      <li> Scientific Computing with Python – freeCodeCamp (2023)</li>
+      <li>Machine Learning with Python – freeCodeCamp (2023)</li>
+      <li> Data Analysis with Python – freeCodeCamp (2023)</li>
+      <li>DevFest 2022 Participation – Google Developer Groups (GDG) Belgaum (2022)</li>
+   </ul>
+   </div>
+  </section>
+
+  <!-- 👨‍💻 About Me -->
+  <section class="section about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate full-stack developer from Karnataka, skilled in building responsive, user-friendly web apps using Django and modern frontend tools. I enjoy clean code, interactive designs, and learning new technologies. My goal is to create impact-driven solutions that help people and improve digital experiences.
+    </p>
+  </section>
+
+  <!-- 📬 Contact -->
+  <section class="section contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Your Phone Number" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- 🔗 Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Veeresh M Kakamari | VK Technologies</p>
+    <div class="social">
+      <a href="https://instagram.com/veeresh_kakamari07"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/veeresh-kakamari-7593b02a0"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/veereuk"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Typewriter Effect
+    const text = "Full Stack Developer | Open Source Contributor";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    typeWriter();
+
+    // Theme Toggle (Sun/Moon)
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById("theme-icon");
+      if (html.getAttribute("data-theme") === "light") {
+        html.setAttribute("data-theme", "dark");
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      } else {
+        html.setAttribute("data-theme", "light");
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      }
+    }
+  </script>
+</body>
+</html>
