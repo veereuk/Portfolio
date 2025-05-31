@@ -1,0 +1,271 @@
+:root {
+    --accent: #1d34e1;
+    --bg-light: #ffffff;
+    --text-light: #111111;
+    --bg-dark: #0f0f0f;
+    --text-dark: #f4f4f4;
+    --card-light: #f1f1f1;
+    --card-dark: #1a1a1a;
+    --shadow: rgba(0, 0, 0, 0.15);
+  }
+  
+  [data-theme="light"] {
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --card: var(--card-light);
+    --btn-bg: #000;
+    --btn-text: #fff;
+  }
+  
+  [data-theme="dark"] {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --card: var(--card-dark);
+    --btn-bg: #fff;
+    --btn-text: #000;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  /* 🌗 Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: var(--text);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  /* 👤 Hero Section */
+  .hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg);
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    object-fit: cover;
+    border: 4px solid black;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    color: var(--accent);
+  }
+  
+  .typewriter {
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 1.3rem;
+  }
+  
+  .btn {
+    margin-top: 1rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  
+  .btn:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  /* ✨ Section Common */
+  .section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  /* 🛠️ Skills */
+  .skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .skill-grid > div {
+    background: var(--card);
+    color: var(--text);
+    padding: 20px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-grid > div:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* 📂 Projects */
+  .projects .project-card {
+    background: var(--card);
+    color: var(--text);
+    padding: 25px;
+    margin: 25px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px var(--shadow);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .projects .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+  
+  .projects button {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    margin-top: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .projects button:hover {
+    background: #000000;
+  }
+  
+  /* 👨‍💻 About */
+  .about {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+  }
+  
+  /* 📬 Contact */
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .contact input,
+  .contact textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 1rem;
+  }
+  
+  .contact button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .contact button:hover {
+    background: #000000;
+  }
+  
+  /* 🔗 Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 10px;
+    background: var(--bg);
+    border-top: 1px solid var(--card);
+    margin-top: 60px;
+  }
+  
+  .footer .social a {
+    color: var(--text);
+    margin: 0 15px;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .social a:hover {
+    color: var(--accent);
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .skill-grid > div {
+      width: 90%;
+    }
+  
+    .projects .project-card {
+      width: 95%;
+    }
+  
+    .theme-toggle {
+      font-size: 20px;
+    }
+  }
+  
+  /* Languages*/
+  .screenshots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .screenshots img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .screenshots img:hover {
+    transform: scale(1.02);
+  }
+  
+  .back-button-container {
+    text-align: center;
+    margin: 50px auto;
+  }
+  .certificate-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  
